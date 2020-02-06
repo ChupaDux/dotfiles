@@ -116,6 +116,14 @@ def init_keys():
             lazy.spawn("emacs")
         ),
         Key(
+            [mod], "p",
+            lazy.spawn("bitwarden")
+        ),
+        Key(
+            [mod], "c",
+            lazy.spawn("clipster -sp")
+        ),
+        Key(
             [mod], "d",
             lazy.spawn("dmenu_run -fn 'Unifont-12'")
         ),
@@ -126,15 +134,18 @@ def init_keys():
             lazy.spawn("amixer set Master 5%-")
         ),
         Key(
-            [mod], "Up", lazy.spawn("amixer set Master 5%+")
+            [mod], "Up",
+            lazy.spawn("amixer set Master 5%+")
         ),
     
         # Volume control:
         Key(
-            [mod], "Left", lazy.spawn("light -U 2")
+            [mod], "Left",
+            lazy.spawn("light -U 2")
         ),
         Key(
-            [mod], "Right", lazy.spawn("light -A 2")
+            [mod], "Right",
+            lazy.spawn("light -A 2")
         ),
     
         # Change keyboard layout:
@@ -150,10 +161,10 @@ keys = init_keys()
 groups = [
     Group(
         "1",
-        label="",
         matches=[Match(wm_class=[
             "firefox", "Brave-browser"
-        ])]
+        ])],
+        label=""
     ),
     Group(
         "2",
@@ -207,7 +218,7 @@ groups = [
     Group(
         "9",
         matches=[Match(wm_class=[
-            "Pcmanfm", "copyq"
+            "Pcmanfm", "Bitwarden"
         ])],
         label=""
     ),
