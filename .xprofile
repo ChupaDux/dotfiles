@@ -1,0 +1,8 @@
+xrdb ~/.Xresoures &
+picom &		# Transparency
+nm-applet & 	# NetworkManager is the most popular way to manage wireless Networks on Linux,
+                # and nm-applet is a desktop environment-independent system tray GUI for it.
+nitrogen --restore &	# Desktop Background
+unclutter &	# Remove mouse when idle
+xss-lock --transfer-sleep-lock -- i3lock --nofork & # Lock the system after sending sleep signal
+clipq & 	# Clipboard manager
