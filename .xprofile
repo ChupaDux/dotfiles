@@ -5,4 +5,4 @@ nm-applet & 	# NetworkManager is the most popular way to manage wireless Network
 nitrogen --restore &	# Desktop Background
 unclutter &	# Remove mouse when idle
 xss-lock --transfer-sleep-lock -- i3lock --nofork & # Lock the system after sending sleep signal
-clipq & 	# Clipboard manager
+clipster -d &	# Minimalistic Clipboard Manager
