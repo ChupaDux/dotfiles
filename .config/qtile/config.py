@@ -183,7 +183,7 @@ groups = [
     Group(
         "4",
         matches=[Match(wm_class=[
-            "spotify"
+            "Spotify"
         ])],
         label=""
     ),
