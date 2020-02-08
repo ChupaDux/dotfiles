@@ -35,4 +35,5 @@ fi
 # Make sure this is before the 'exec' command or it won't be sourced.
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
-exec qtile
+exec qtile &
+exec clipster -d
