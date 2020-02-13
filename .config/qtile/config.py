@@ -296,9 +296,10 @@ def get_bar():
            text='',
            foreground="8fbcbb",
        ),
-       widget.KeyboardLayout(
-           foreground="8fbcbb",
-       ),
+       # Enabling keyboard layout widget makes firefox UNUSABLE after 10-15 minutes. so I disabled it
+       # widget.KeyboardLayout(
+       #     foreground="8fbcbb",
+       # ),
        widget.TextBox(
            text='|',
            foreground="5e81ac",
