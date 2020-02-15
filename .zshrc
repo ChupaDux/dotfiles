@@ -31,7 +31,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(history-substring-search vi-mode git zsh-autosuggestions common-aliases zsh_reload)
+plugins=(history-substring-search vi-mode git zsh-autosuggestions zsh_reload)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -43,11 +43,11 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='emacs'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -61,9 +61,12 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
-# alias for ls command
-# I use LSD package to have aesthetic ls
-alias ls='lsd'
+#
+alias l='exa -l --color=always --group-directories-first' 
+alias lla='exa -al --color=always --group-directories-first' # my preferred listing
+alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
 
 # alias for pacman
 alias p='sudo pacman'
@@ -72,12 +75,13 @@ alias p='sudo pacman'
 alias v='vim'
 alias sv='sudo vim'
 
+# alias for rm -i
+alias rmi='rm -i'
+
 # alias for xclip >> it's the same as copy, but i can actually pipe something into clipboard
 alias xclip='xclip -selection clipboard'
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
-
-pfetch
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
