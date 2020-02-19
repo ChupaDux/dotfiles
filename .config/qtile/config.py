@@ -45,10 +45,12 @@ def init_keys():
             lazy.layout.swap_right()
         ),
         Key(
-            [mod, "shift"], "j", lazy.layout.shuffle_down()
+            [mod, "shift"], "j",
+            lazy.layout.shuffle_down()
         ),
         Key(
-            [mod, "shift"], "k", lazy.layout.shuffle_up()
+            [mod, "shift"], "k",
+            lazy.layout.shuffle_up()
         ),
 
         # Resize keys:
@@ -109,7 +111,7 @@ def init_keys():
         ),
         Key(
             [mod, "shift"], "f",
-            lazy.spawn("brave")
+            lazy.spawn("firefox")
         ),
         Key(
             [mod, "shift"], "e",
@@ -162,7 +164,7 @@ groups = [
     Group(
         "1",
         matches=[Match(wm_class=[
-            "firefox", "Brave-browser"
+            "firefox", "Brave-browser", "Tor Browser"
         ])],
         label=""
     ),
@@ -225,7 +227,7 @@ groups = [
     Group(
         "0",
         matches=[Match(wm_class=[
-            "Nitrogen", "nomacs", "feh"
+            "Nitrogen", "nomacs", "feh", "sxiv", "Gimp"
         ])],
         label=""
     ),
@@ -405,8 +407,8 @@ floating_layout = layout.Floating(float_rules=[
 auto_fullscreen = True
 focus_on_window_activation = "smart"
 
-# wmname = "LG3D"
-wmname = "qtile"
+wmname = "LG3D"
+# wmname = "qtile"
 
 
 @hook.subscribe.startup_once
