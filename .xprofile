@@ -4,5 +4,6 @@ nm-applet & 	# NetworkManager is the most popular way to manage wireless Network
                 # and nm-applet is a desktop environment-independent system tray GUI for it.
 nitrogen --restore &	# Desktop Background
 unclutter &	# Remove mouse when idle
-xss-lock --transfer-sleep-lock -- i3lock --nofork & # Lock the system after sending sleep signal
+# xss-lock --transfer-sleep-lock -- i3lock --nofork & # Lock the system after sending sleep signal
 clipster -d &	# Minimalistic Clipboard Manager
+dunst & 	# Notification Manager
