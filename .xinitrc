@@ -36,4 +36,3 @@ fi
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
 exec qtile
-# exec clipster -d

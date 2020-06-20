@@ -88,7 +88,7 @@ def init_keys():
         ),
         # Close focused window:
         Key(
-            [mod, "shift"], "q",
+            [mod], "q",
             lazy.window.kill()
         ),
     
@@ -99,10 +99,10 @@ def init_keys():
         ),
     
         # Open a run prompt:
-        Key(
-            [mod], "r",
-            lazy.spawncmd()
-        ),
+        # Key(
+        #     [mod], "r",
+        #     lazy.spawncmd()
+        # ),
     
         # Applications/Scripts Shortcuts:
         Key(
@@ -130,7 +130,7 @@ def init_keys():
             lazy.spawn("dmenu_run -fn 'Unifont-12'")
         ),
     
-        # Backlight control:
+        # Volume control:
         Key(
             [mod], "Down",
             lazy.spawn("amixer set Master 5%-")
@@ -140,21 +140,21 @@ def init_keys():
             lazy.spawn("amixer set Master 5%+")
         ),
     
-        # Volume control:
+        # Backlight control:
         Key(
             [mod], "Left",
-            lazy.spawn("light -U 2")
+            lazy.spawn("light -U 1")
         ),
         Key(
             [mod], "Right",
-            lazy.spawn("light -A 2")
-        ),
+            lazy.spawn("light -A 1")
+        )
     
         # Change keyboard layout:
-        Key(
-            [mod], "space",
-            lazy.spawn("./scripts/kbdlayout.sh")
-        )
+        # Key(
+        #     [mod], "space",
+        #     lazy.spawn("./scripts/kbdlayout.sh")
+        # )
     ]
     return keys
 
@@ -178,7 +178,7 @@ groups = [
     Group(
         "3",
         matches=[Match(wm_class=[
-            "Emacs", "VSCodium", "java-lang-Thread", "jetbrains-idea", "jetbrains-pycharm"
+            "Emacs", "VSCodium", "java-lang-Thread", "jetbrains-pycharm"
         ])],
         label=""
     ),
@@ -206,7 +206,7 @@ groups = [
     Group(
         "7",
         matches=[Match(wm_class=[
-            "discord", "Caprine", "TelegramDesktop", "crx_nckgahadagoaajjgafhacjanaoiihapd"
+            "discord", "Slack", "Caprine", "TelegramDesktop", "crx_nckgahadagoaajjgafhacjanaoiihapd"
         ])],
         label=""
     ),
@@ -227,7 +227,7 @@ groups = [
     Group(
         "0",
         matches=[Match(wm_class=[
-            "Nitrogen", "nomacs", "feh", "sxiv", "Gimp"
+            "Nitrogen", "nomacs", "feh", "Gimp"
         ])],
         label=""
     ),
@@ -259,8 +259,8 @@ layouts = [
 
 widget_defaults = dict(
     font='Cascadia Code',
-    fontsize=14,
-    padding=3,
+    fontsize=13,
+    padding=2,
     background="2e3440",
     foreground="5e81ac",
 )
@@ -277,10 +277,6 @@ def get_bar():
            center_aligned=True,
            font="Font Awesome",
        ),
-       widget.Prompt(
-           prompt='Run:',
-           foreground="ebcb8b"
-       ),
        widget.TextBox(
            text='|',
            foreground="bf6a6a",
@@ -295,11 +291,13 @@ def get_bar():
            foreground="8fbcbb",
        ),
        widget.TextBox(
-           text='',
+           text='北',
            foreground="8fbcbb",
+           font="Cascadia Code"
        ),
        # Enabling keyboard layout widget makes firefox UNUSABLE after 10-15 minutes. so I disabled it
-       # widget.KeyboardLayout(
+       # widget.TextBox(
+       #     text='',
        #     foreground="8fbcbb",
        # ),
        widget.TextBox(
@@ -361,7 +359,7 @@ def get_bar():
            foreground="a3be8c",
        ),
        widget.Clock(
-           format='%a %H:%M',
+           format='%A %d %b %Y %H:%M',
            foreground = "a3be8c",
            update_interval = 60.0,
        ),

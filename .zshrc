@@ -72,16 +72,20 @@ alias lt='exa -aT --color=always --group-directories-first' # tree listing
 alias p='sudo pacman'
 
 # alias for vim
-alias v='vim'
+alias v='nvim'
 alias sv='sudo vim'
 
 # alias for rm -i
 alias rmi='rm -i'
 
+# alias for zathura
+alias z='zathura'
+
 # alias for xclip >> it's the same as copy, but i can actually pipe something into clipboard
 alias xclip='xclip -selection clipboard'
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME'
+alias cat='bat'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
